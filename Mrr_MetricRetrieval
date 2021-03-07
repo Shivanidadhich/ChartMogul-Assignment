@@ -1,0 +1,12 @@
+import chartmogul
+config = chartmogul.Config('212d00b42e50b597139fe254b79342fe','4e607fe675d108fe1ef2c377c3e54cf0')
+metrics=chartmogul.Metrics.mrr(
+    config,
+    start_date="2019-01-01",
+    end_date="2019-04-30",
+    interval="month")
+print("Total MRR for Q1 2019:")
+print("January: " + str(metrics.get()[0][0].mrr))
+print("February: " + str(metrics.get()[0][1].mrr))
+print("March: " + str(metrics.get()[0][2].mrr))
+print("April: " + str(metrics.get()[0][3].mrr))
